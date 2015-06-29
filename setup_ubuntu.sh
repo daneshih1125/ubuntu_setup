@@ -20,7 +20,7 @@ apt_tools() {
 ubuntu_kernel_env() {
 	sudo add-apt-repository ppa:canonical-kernel-team/ppa
 	sudo apt-get update
-	sudo apt-get install dpkg-dev
+	sudo apt-get install dpkg-dev libncurses5-dev
 }
 
 apt_tools
