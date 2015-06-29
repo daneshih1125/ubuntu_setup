@@ -10,6 +10,8 @@ setup_vim() {
 	[ -d "/tmp/vim" ] && rm -rf /tmp/vim
 	git clone https://github.com/daneshih1125/my-vim.git /tmp/vim
 	cp -a /tmp/vim/.vim  /tmp/vim/.vimrc ~/
+	# Install vundle
+	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 }
 
 apt_tools() {
