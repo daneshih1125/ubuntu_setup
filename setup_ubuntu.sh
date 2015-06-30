@@ -15,6 +15,8 @@ setup_vim() {
 	cp -a /tmp/vim/.vim  /tmp/vim/.vimrc ~/
 	# Install vundle
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
+	# Install all plgin from command line
+	vim +BundleInstall +qall
 }
 
 apt_tools() {
