@@ -7,7 +7,6 @@ set_bashrc() {
 	[ "$set_o_vi" = "" ] && echo 'set -o vi' >> ~/.bashrc
 }
 
-
 setup_vim() {
 	sudo apt-get -y install vim cscope ctags
 	[ -d "/tmp/vim" ] && rm -rf /tmp/vim
@@ -30,10 +29,23 @@ ubuntu_kernel_env() {
 	sudo apt-get -y install dpkg-dev libncurses5-dev
 }
 
+utils_install() {
+	sudo apt-get -y install tree meld vbindiff
+}
+
+python_env() {
+	sudo apt-get -y install ipython ipython-qtconsole python-pip
+	sudo pip install pyzmq
+}
+
 apt_tools
 
 set_bashrc
 
 setup_vim
+
+python_env
+
+utils_install
 
 ubuntu_kernel_env
