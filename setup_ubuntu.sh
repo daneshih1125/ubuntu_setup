@@ -9,13 +9,22 @@ set_bashrc() {
 
 setup_vim() {
 	sudo apt-get -y install vim cscope ctags
-	[ -d "/tmp/vim" ] && rm -rf /tmp/vim
-	git clone https://github.com/daneshih1125/my-vim.git /tmp/vim
-	cp -a /tmp/vim/.vim  /tmp/vim/.vimrc ~/
+	# YouCompleteMe
+	sudo apt-get -y install python-dev
+	# github repository
+	git clone https://github.com/daneshih1125/my-vim.git ~/.vim
+	cp -a ~/.vim/vimrc ~/.vimrc
+	
 	# Install vundle
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 	# Install all plgin from command line
 	vim +BundleInstall +qall
+
+	# install YouCompleteMe
+	if [ -f "~/.vim/bundle/YouCompleteMe/install.sh" ]
+	then
+		~/.vim/bundle/YouCompleteMe/install.sh 2>&1 |tee /tmp/YouCompleteMe_install.log
+	fi
 }
 
 apt_tools() {
