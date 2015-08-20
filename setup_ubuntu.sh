@@ -8,7 +8,7 @@ set_bashrc() {
 }
 
 setup_vim() {
-	sudo apt-get -y install vim cscope ctags
+	sudo apt-get -y install vim vim-gtk cscope ctags
 	# YouCompleteMe
 	sudo apt-get -y install python-dev
 	# github repository
