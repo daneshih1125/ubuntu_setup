@@ -14,7 +14,7 @@ setup_vim() {
 	# github repository
 	git clone https://github.com/daneshih1125/my-vim.git ~/.vim
 	cp -a ~/.vim/vimrc ~/.vimrc
-	
+
 	# Install vundle
 	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 	# Install all plgin from command line
@@ -28,7 +28,7 @@ setup_vim() {
 }
 
 apt_tools() {
-	sudo apt-get -y install apt-file 
+	sudo apt-get -y install apt-file
 	apt-file update
 }
 
@@ -44,7 +44,7 @@ utils_install() {
 
 python_env() {
 	sudo apt-get -y install ipython ipython-qtconsole python-pip
-	sudo pip install pyzmq
+	sudo pip install pyzmq pycscope
 }
 
 apt_tools
