@@ -7,6 +7,13 @@ set_bashrc() {
 	[ "$set_o_vi" = "" ] && echo 'set -o vi' >> ~/.bashrc
 }
 
+setup_git() {
+	sudo apt-get -y install git
+	git config --global user.username "Dane"
+	git config --global user.email "daneshih1125@gmail.com"
+	git config --global alias.ll "log --all --graph --decorate --oneline --simplify-by-decoration"
+}
+
 setup_vim() {
 	sudo apt-get -y install vim vim-gtk cscope ctags
 	# YouCompleteMe
@@ -50,6 +57,8 @@ python_env() {
 apt_tools
 
 set_bashrc
+
+setup_git
 
 setup_vim
 
