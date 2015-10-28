@@ -35,9 +35,11 @@ setup_vim() {
 	fi
 }
 
-apt_tools() {
+apt_deb_tools() {
 	sudo apt-get -y install apt-file
 	apt-file update
+	# deb build utils
+	sudo apt-get -y install build-essential dh-make fakeroot devscripts pbuilder cdbs
 }
 
 ubuntu_kernel_env() {
@@ -55,7 +57,7 @@ python_env() {
 	sudo pip install pyzmq pycscope
 }
 
-apt_tools
+apt_deb_tools
 
 set_bashrc
 
