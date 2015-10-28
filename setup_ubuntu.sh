@@ -27,6 +27,7 @@ setup_vim() {
 	# Install all plgin from command line
 	vim +BundleInstall +qall
 
+	sudo apt-get -y install cmake
 	# install YouCompleteMe
 	if [ -f "~/.vim/bundle/YouCompleteMe/install.sh" ]
 	then
