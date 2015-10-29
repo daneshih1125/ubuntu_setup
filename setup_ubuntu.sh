@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 set_bashrc() {
 	set_o_vi=$(grep -E "set\s*-o\s*vi" ~/.bashrc)
-	[ "$set_o_vi" = "" ] && echo 'set -o vi' >> ~/.bashrc
+	[ "$set_o_vi" = "" ] && echo 'set -o vi' >> ${HOME}/.bashrc
 }
 
 setup_git() {
@@ -19,19 +19,19 @@ setup_vim() {
 	# YouCompleteMe
 	sudo apt-get -y install python-dev
 	# github repository
-	git clone https://github.com/daneshih1125/my-vim.git ~/.vim
-	cp -a ~/.vim/vimrc ~/.vimrc
+	git clone https://github.com/daneshih1125/my-vim.git ${HOME}/.vim
+	cp -a ${HOME}/.vim/vimrc ${HOME}/.vimrc
 
 	# Install vundle
-	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/vundle
+	git clone https://github.com/gmarik/Vundle.vim.git ${HOME}/.vim/bundle/vundle
 	# Install all plgin from command line
 	vim +BundleInstall +qall
 
 	sudo apt-get -y install cmake
 	# install YouCompleteMe
-	if [ -f "~/.vim/bundle/YouCompleteMe/install.sh" ]
+	if [ -f "${HOME}/.vim/bundle/YouCompleteMe/install.sh" ]
 	then
-		~/.vim/bundle/YouCompleteMe/install.sh 2>&1 |tee /tmp/YouCompleteMe_install.log
+		${HOME}/.vim/bundle/YouCompleteMe/install.sh 2>&1 |tee /tmp/YouCompleteMe_install.log
 	fi
 }
 
