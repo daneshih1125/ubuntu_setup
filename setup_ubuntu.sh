@@ -36,6 +36,7 @@ setup_vim() {
 }
 
 apt_deb_tools() {
+	sudo apt-get update
 	sudo apt-get -y install apt-file
 	apt-file update
 	# deb build utils
