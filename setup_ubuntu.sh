@@ -13,6 +13,7 @@ setup_git() {
 	git config --global user.email "daneshih1125@gmail.com"
 	git config --global alias.ll "log --all --graph --decorate --oneline --simplify-by-decoration"
 	git config --global alias.ls "log --name-status"
+	git config --global alias.pl "pull --rebase"
 }
 
 setup_vim() {
