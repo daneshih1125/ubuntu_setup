@@ -3,8 +3,11 @@
 export DEBIAN_FRONTEND=noninteractive
 
 set_bashrc() {
-	set_o_vi=$(grep -E "set\s*-o\s*vi" ~/.bashrc)
-	[ "$set_o_vi" = "" ] && echo 'set -o vi' >> ${HOME}/.bashrc
+	cp my-bashrc ~/.my-bashrc
+	if ! grep -E "source\s+\~/.my-bashrc" ~/.bashrc >/dev/null 2>&1
+	then
+		echo 'source ~/.my-bashrc' >> ~/.bashrc
+	fi
 }
 
 setup_git() {

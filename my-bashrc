@@ -1,0 +1,7 @@
+# go
+GOPATH=$HOME/go
+PATH=${PATH}:/usr/local/go/bin:${GOPATH}/bin
+
+# cmd
+alias cgrep='grep --exclude=tags --exclude=cscope.out --color=auto'
+set -o vi
